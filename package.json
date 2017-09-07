@@ -1,9 +1,11 @@
 {
   "name": "pg_library",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Test authoring the library",
   "main": "dist/webpack-numbers.js",
   "scripts": {
+    "build:browser": "webpack && cp dist/webpack-numbers.js examples/browser",
+    "build:node": "webpack && cp dist/webpack-numbers.js examples/node/ && node examples/node/example.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
