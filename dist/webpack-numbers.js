@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["webpackNumbers"] = factory();
+	else
+		root["webpackNumbers"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -65,32 +75,46 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (immutable) */ __webpack_exports__["numToWord"] = numToWord;
-/* harmony export (immutable) */ __webpack_exports__["wordToNum"] = wordToNum;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ref_json__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ref_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__ref_json__);
 
 
+var _lodash = __webpack_require__(1);
 
+var _lodash2 = _interopRequireDefault(_lodash);
 
-function numToWord(num) {
-    return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.reduce(__WEBPACK_IMPORTED_MODULE_1__ref_json___default.a, (accum, ref) => {
+var _ref = __webpack_require__(4);
+
+var _ref2 = _interopRequireDefault(_ref);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function createTransalator() {
+    return {
+        numtoword: function numtoword(num) {
+            return num < 0 || num > 5 ? 'This is a failure' : converttoword(num);
+        },
+        wordtonum: function wordtonum(word) {
+            var num = converttonum(word);
+            return num === -1 ? 'This is a failure' : num;
+        }
+    };
+}
+
+var converttoword = function converttoword(num) {
+    return _lodash2.default.reduce(_ref2.default, function (accum, ref) {
         return ref.num === num ? ref.word : accum;
     }, '');
-}
+};
 
-function wordToNum(word) {
-    return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.reduce(__WEBPACK_IMPORTED_MODULE_1__ref_json___default.a, (accum, ref) => {
+var converttonum = function converttonum(word) {
+    return _lodash2.default.reduce(_ref2.default, function (accum, ref) {
         return ref.word === word && word.toLowerCase() ? ref.num : accum;
     }, -1);
-}
+};
 
+module.exports = createTransalator();
 
 /***/ }),
 /* 1 */
@@ -17247,3 +17271,4 @@ module.exports = [{"num":1,"word":"One"},{"num":2,"word":"Two"},{"num":3,"word":
 
 /***/ })
 /******/ ]);
+});
