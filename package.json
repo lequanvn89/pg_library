@@ -1,0 +1,24 @@
+{
+  "name": "pg_library",
+  "version": "1.0.0",
+  "description": "Test authoring the library",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lequanvn89/pg_library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lequanvn89/pg_library/issues"
+  },
+  "homepage": "https://github.com/lequanvn89/pg_library#readme",
+  "devDependencies": {
+    "lodash": "^4.17.4",
+    "webpack": "^3.5.6"
+  }
+}
