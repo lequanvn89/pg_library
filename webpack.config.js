@@ -8,5 +8,10 @@ module.exports = {
         filename: 'webpack-numbers.js',
         libraryTarget: 'umd',
         library: 'webpackNumbers',
-    }
+    },
+    module: {
+        rules: [
+            {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+        ]
+    },
 };
